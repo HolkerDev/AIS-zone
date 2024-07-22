@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bucbyhnb1rn30"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 230.0
+offset_top = 46.0
+offset_right = 897.0
+offset_bottom = 121.0
+theme_override_font_sizes/normal_font_size = 50
+text = "Welcome to the AIShit zone"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 15.0
+offset_top = 177.0
+offset_right = 1144.0
+offset_bottom = 628.0
+theme_override_font_sizes/font_size = 300
+text = "Start"
