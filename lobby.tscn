@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c3a0vucsflsiv"]
 
-[ext_resource type="Theme" uid="uid://bhundlasnejpw" path="res://h1_text.tres" id="1_yl782"]
+[ext_resource type="Theme" path="res://h1_text.tres" id="1_yl782"]
 
 [node name="Lobby" type="Node2D"]
 
