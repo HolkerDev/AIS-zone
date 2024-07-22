@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://bucbyhnb1rn30"]
+[gd_scene load_steps=2 format=3 uid="uid://bucbyhnb1rn30"]
+
+[ext_resource type="Script" path="res://start_button.gd" id="1_efqpl"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -17,3 +19,6 @@ offset_right = 1144.0
 offset_bottom = 628.0
 theme_override_font_sizes/font_size = 300
 text = "Start"
+script = ExtResource("1_efqpl")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
