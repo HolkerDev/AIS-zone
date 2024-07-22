@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://bucbyhnb1rn30"]
+
+[ext_resource type="Texture2D" uid="uid://dw7hl0yh6s0j6" path="res://menu_scene/menu_background.webp" id="1_idcvc"]
+[ext_resource type="Script" path="res://menu_scene/start_button.gd" id="2_uv8ia"]
+
+[node name="menu_scene_root" type="Node2D"]
+
+[node name="menu_backgroud_sprite" type="Sprite2D" parent="."]
+modulate = Color(0.466181, 0.466181, 0.466181, 0.941176)
+show_behind_parent = true
+position = Vector2(950.5, 547)
+scale = Vector2(1.101, 1.06836)
+texture = ExtResource("1_idcvc")
+
+[node name="welcome_msg" type="RichTextLabel" parent="."]
+offset_left = 649.0
+offset_top = 54.0
+offset_right = 1316.0
+offset_bottom = 129.0
+theme_override_font_sizes/normal_font_size = 50
+text = "Welcome to the AIShit zone"
+
+[node name="start_game_btn" type="Button" parent="."]
+modulate = Color(1, 1, 0.419608, 1)
+offset_left = 674.0
+offset_top = 844.0
+offset_right = 1279.0
+offset_bottom = 1017.0
+theme_override_font_sizes/font_size = 120
+text = "Start"
+script = ExtResource("2_uv8ia")
+
+[connection signal="pressed" from="start_game_btn" to="start_game_btn" method="_on_pressed"]
