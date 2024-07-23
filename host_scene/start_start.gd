@@ -12,8 +12,6 @@ func _ready():
 	if multiplayer.is_server():
 		print("Server started!")
 
-
 func _on_peer_connected(user_id: int):
 	if multiplayer.is_server():
 		print("Server: user connected: ", user_id)
-

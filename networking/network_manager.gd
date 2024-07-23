@@ -1,9 +1,7 @@
 extends Node
 
-# This will be used to identify the RPC calls
-const SERVER_ID = 1
+const SERVER_PORT = 8082
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
 

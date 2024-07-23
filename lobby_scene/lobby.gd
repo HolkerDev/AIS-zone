@@ -3,7 +3,6 @@ extends Node
 
 @onready var ip_line_edit = $EditTextIP
 @onready var login_line_edit = $EditTextLogin
-const port = 8082
 
 var peer = ENetMultiplayerPeer.new()
 var is_peer_connected = false
@@ -13,7 +12,7 @@ func _ready():
 
 func _on_join_pressed():
 	var ip = ip_line_edit.text
-	peer.create_client("127.0.0.1", port)
+	peer.create_client("192.168.0.128", NetworkManager.SERVER_PORT)
 	multiplayer.multiplayer_peer = peer
 	multiplayer.connected_to_server.connect(_on_connected_to_server)
 
