@@ -14,18 +14,6 @@ func _ready():
 
 
 func _on_peer_connected(user_id: int):
-	print("user connected: ", user_id)
-
-@rpc("any_peer")
-func authenticate_player():
-	print('authenticate called!')
-	var peer_id = multiplayer.get_remote_sender_id()
-	
-	#if not login in ['1', '2']:
-		#rpc_id(peer_id, "authentication_failed", "User doesn't exist")
-		#print('here2')
-	#elif password == '1':
-		#var token = randi()
-		#logged_users[login] = token
-		#rpc_id(peer_id, "authentication_succeed", token)
+	if multiplayer.is_server():
+		print("Server: user connected: ", user_id)
 
