@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bucbyhnb1rn30"]
+[gd_scene load_steps=5 format=3 uid="uid://bucbyhnb1rn30"]
 
 [ext_resource type="Texture2D" uid="uid://dw7hl0yh6s0j6" path="res://menu_scene/menu_background.webp" id="1_idcvc"]
-[ext_resource type="Script" path="res://menu_scene/start_button.gd" id="2_uv8ia"]
+[ext_resource type="Script" path="res://menu_scene/host_game.gd" id="2_uv8ia"]
+[ext_resource type="Script" path="res://menu_scene/join_game.gd" id="3_dvc5t"]
+[ext_resource type="Script" path="res://menu_scene/exit_game.gd" id="3_dwk02"]
 
 [node name="menu_scene_root" type="Node2D"]
 
@@ -20,14 +22,36 @@ offset_bottom = 129.0
 theme_override_font_sizes/normal_font_size = 50
 text = "Welcome to the AIShit zone"
 
-[node name="start_game_btn" type="Button" parent="."]
+[node name="host_game_btn" type="Button" parent="."]
 modulate = Color(1, 1, 0.419608, 1)
-offset_left = 674.0
-offset_top = 844.0
-offset_right = 1279.0
-offset_bottom = 1017.0
+offset_left = 612.0
+offset_top = 380.0
+offset_right = 1217.0
+offset_bottom = 553.0
 theme_override_font_sizes/font_size = 120
-text = "Start"
+text = "Host"
 script = ExtResource("2_uv8ia")
 
-[connection signal="pressed" from="start_game_btn" to="start_game_btn" method="_on_pressed"]
+[node name="join_game_btn" type="Button" parent="."]
+modulate = Color(1, 1, 0.419608, 1)
+offset_left = 614.0
+offset_top = 620.0
+offset_right = 1219.0
+offset_bottom = 793.0
+theme_override_font_sizes/font_size = 120
+text = "Join"
+script = ExtResource("3_dvc5t")
+
+[node name="exit_game_btn" type="Button" parent="."]
+modulate = Color(1, 1, 0.419608, 1)
+offset_left = 602.0
+offset_top = 846.0
+offset_right = 1207.0
+offset_bottom = 1019.0
+theme_override_font_sizes/font_size = 120
+text = "Exit"
+script = ExtResource("3_dwk02")
+
+[connection signal="pressed" from="host_game_btn" to="host_game_btn" method="_on_pressed"]
+[connection signal="pressed" from="join_game_btn" to="join_game_btn" method="_on_join_pressed"]
+[connection signal="pressed" from="exit_game_btn" to="exit_game_btn" method="_on_exit_pressed"]
