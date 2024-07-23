@@ -1,47 +1,39 @@
 # lobby.gd
 extends Node
 
-const PORT = 4433
+@onready var ip_line_edit = $EditTextIP
+@onready var login_line_edit = $EditTextLogin
+const port = 8082
 
-# func _ready():
-# 	# Start paused.
-# 	get_tree().paused = true
-# 	# You can save bandwidth by disabling server relay and peer notifications.
-# 	multiplayer.server_relay = false
+var peer = ENetMultiplayerPeer.new()
+var is_peer_connected = false
 
-# 	# Automatically start the server in headless mode.
-# 	if DisplayServer.get_name() == "headless":
-# 		print("Automatically starting dedicated server.")
-# 		_on_host_pressed.call_deferred()
 
-func _on_host_pressed():
-	print("ping")
-	OS.alert("Failed to start multiplayer client.")
-	# Start as server.
-	var peer = ENetMultiplayerPeer.new()
-	peer.create_server(PORT)
-	if peer.get_connection_status() == MultiplayerPeer.CONNECTION_DISCONNECTED:
-		OS.alert("Failed to start multiplayer server.")
-		return
-	multiplayer.multiplayer_peer = peer
-	start_game()
+func _ready():
+	pass
 
 func _on_join_pressed():
-	print("ping join")
-	# Start as client.
-	# var txt: String = $LineEditIP.text
-	# if txt == "":
-	# 	OS.alert("Need a remote to connect to.")
-	# 	return
-	# var peer = ENetMultiplayerPeer.new()
-	# peer.create_client(txt, PORT)
-	# if peer.get_connection_status() == MultiplayerPeer.CONNECTION_DISCONNECTED:
-	# 	OS.alert("Failed to start multiplayer client.")
-	# 	return
-	# multiplayer.multiplayer_peer = peer
-	# start_game()
+	var ip = ip_line_edit.text
+	peer.create_client(ip, port)
+	multiplayer.multiplayer_peer = peer
+	send_credentials()
 
-func start_game():
-	# Hide the UI and unpause to start the game.
-	$UI.hide()
-	get_tree().paused = false
+
+func send_credentials():
+	print('send_credentials', get_multiplayer_authority())
+	var login = login_line_edit.text
+	var password = '1'
+	rpc_id(get_multiplayer_authority(), "authenticate_player", login, password)
+
+
+@rpc
+func authentication_failed(error_message):
+	print("Connection failed! ", error_message)
+
+
+@rpc
+func authentication_succeed(session_token):
+	var peers = multiplayer.get_peers()
+	print("Connection stablished! ", peers)
+	get_tree().change_scene_to_file('res://level.tscn')
+
