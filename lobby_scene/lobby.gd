@@ -14,8 +14,12 @@ func _ready():
 
 func _on_join_pressed():
 	var ip = ip_line_edit.text
-	peer.create_client(ip, port)
+	peer.create_client("127.0.0.1", port)
 	multiplayer.multiplayer_peer = peer
+	multiplayer.connected_to_server.connect(_on_connected_to_server)
+
+func _on_connected_to_server():
+	print("callback on connection")
 	send_credentials()
 
 
@@ -23,7 +27,9 @@ func send_credentials():
 	print('send_credentials', get_multiplayer_authority())
 	var login = login_line_edit.text
 	var password = '1'
-	rpc_id(get_multiplayer_authority(), "authenticate_player", login, password)
+	var result = rpc_id(get_multiplayer_authority(), "authenticate_player", "1", "2")
+	if result != OK:
+		print("error sending the rpc: ", result)
 
 
 @rpc
