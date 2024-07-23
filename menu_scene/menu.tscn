@@ -16,7 +16,7 @@ position = Vector2(950.5, 547)
 scale = Vector2(1.101, 1.06836)
 texture = ExtResource("1_idcvc")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="scroll_background_sprite" type="Sprite2D" parent="."]
 position = Vector2(1001, 533)
 scale = Vector2(10.0645, 9.45745)
 texture = ExtResource("5_m7n7o")
