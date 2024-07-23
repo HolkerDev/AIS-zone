@@ -1,53 +1,65 @@
-[gd_scene load_steps=5 format=3 uid="uid://bucbyhnb1rn30"]
+[gd_scene load_steps=7 format=3 uid="uid://bucbyhnb1rn30"]
 
 [ext_resource type="Texture2D" uid="uid://dw7hl0yh6s0j6" path="res://menu_scene/menu_background.webp" id="1_idcvc"]
 [ext_resource type="Script" path="res://menu_scene/host_game.gd" id="2_uv8ia"]
+[ext_resource type="Theme" uid="uid://bhundlasnejpw" path="res://h1_text.tres" id="3_4gog6"]
 [ext_resource type="Script" path="res://menu_scene/join_game.gd" id="3_dvc5t"]
 [ext_resource type="Script" path="res://menu_scene/exit_game.gd" id="3_dwk02"]
+[ext_resource type="Texture2D" uid="uid://317jdp46gm6" path="res://assets/panelInset_beige.png" id="5_m7n7o"]
 
 [node name="menu_scene_root" type="Node2D"]
 
 [node name="menu_backgroud_sprite" type="Sprite2D" parent="."]
-modulate = Color(0.466181, 0.466181, 0.466181, 0.941176)
+modulate = Color(1, 1, 1, 0.941176)
 show_behind_parent = true
 position = Vector2(950.5, 547)
 scale = Vector2(1.101, 1.06836)
 texture = ExtResource("1_idcvc")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1001, 533)
+scale = Vector2(10.0645, 9.45745)
+texture = ExtResource("5_m7n7o")
+
 [node name="welcome_msg" type="RichTextLabel" parent="."]
-offset_left = 649.0
-offset_top = 54.0
-offset_right = 1316.0
-offset_bottom = 129.0
+offset_left = 695.0
+offset_top = 175.0
+offset_right = 1362.0
+offset_bottom = 250.0
+theme = ExtResource("3_4gog6")
+theme_override_colors/default_color = Color(0.458824, 0.32549, 0, 1)
 theme_override_font_sizes/normal_font_size = 50
 text = "Welcome to the AIShit zone"
 
 [node name="host_game_btn" type="Button" parent="."]
 modulate = Color(1, 1, 0.419608, 1)
-offset_left = 612.0
-offset_top = 380.0
-offset_right = 1217.0
-offset_bottom = 553.0
+offset_left = 713.0
+offset_top = 346.0
+offset_right = 1318.0
+offset_bottom = 519.0
+theme = ExtResource("3_4gog6")
 theme_override_font_sizes/font_size = 120
 text = "Host"
 script = ExtResource("2_uv8ia")
 
 [node name="join_game_btn" type="Button" parent="."]
 modulate = Color(1, 1, 0.419608, 1)
-offset_left = 614.0
-offset_top = 620.0
-offset_right = 1219.0
-offset_bottom = 793.0
+offset_left = 713.0
+offset_top = 542.0
+offset_right = 1318.0
+offset_bottom = 715.0
+theme = ExtResource("3_4gog6")
 theme_override_font_sizes/font_size = 120
 text = "Join"
 script = ExtResource("3_dvc5t")
 
 [node name="exit_game_btn" type="Button" parent="."]
 modulate = Color(1, 1, 0.419608, 1)
-offset_left = 602.0
-offset_top = 846.0
-offset_right = 1207.0
-offset_bottom = 1019.0
+offset_left = 713.0
+offset_top = 748.0
+offset_right = 1318.0
+offset_bottom = 921.0
+theme = ExtResource("3_4gog6")
 theme_override_font_sizes/font_size = 120
 text = "Exit"
 script = ExtResource("3_dwk02")
