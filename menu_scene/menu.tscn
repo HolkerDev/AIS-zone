@@ -12,20 +12,20 @@
 [node name="menu_backgroud_sprite" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.941176)
 show_behind_parent = true
-position = Vector2(950.5, 547)
-scale = Vector2(1.101, 1.06836)
+position = Vector2(973, 413.5)
+scale = Vector2(1.07701, 0.819336)
 texture = ExtResource("1_idcvc")
 
 [node name="scroll_background_sprite" type="Sprite2D" parent="."]
-position = Vector2(1001, 533)
-scale = Vector2(10.0645, 9.45745)
+position = Vector2(999, 450.25)
+scale = Vector2(10.0215, 7.69681)
 texture = ExtResource("5_m7n7o")
 
 [node name="welcome_msg" type="RichTextLabel" parent="."]
-offset_left = 695.0
-offset_top = 175.0
-offset_right = 1362.0
-offset_bottom = 250.0
+offset_left = 702.0
+offset_top = 142.0
+offset_right = 1369.0
+offset_bottom = 217.0
 theme = ExtResource("3_4gog6")
 theme_override_colors/default_color = Color(0.458824, 0.32549, 0, 1)
 theme_override_font_sizes/normal_font_size = 50
@@ -34,10 +34,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="host_game_btn" type="Button" parent="."]
 modulate = Color(1, 1, 0.419608, 1)
-offset_left = 713.0
-offset_top = 346.0
-offset_right = 1318.0
-offset_bottom = 519.0
+offset_left = 721.0
+offset_top = 246.0
+offset_right = 1326.0
+offset_bottom = 419.0
 theme = ExtResource("3_4gog6")
 theme_override_font_sizes/font_size = 120
 text = "Host"
@@ -46,10 +46,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="join_game_btn" type="Button" parent="."]
 modulate = Color(1, 1, 0.419608, 1)
-offset_left = 713.0
-offset_top = 542.0
-offset_right = 1318.0
-offset_bottom = 715.0
+offset_left = 721.0
+offset_top = 432.0
+offset_right = 1326.0
+offset_bottom = 605.0
 theme = ExtResource("3_4gog6")
 theme_override_font_sizes/font_size = 120
 text = "Join"
@@ -58,10 +58,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="exit_game_btn" type="Button" parent="."]
 modulate = Color(1, 1, 0.419608, 1)
-offset_left = 713.0
-offset_top = 748.0
-offset_right = 1318.0
-offset_bottom = 921.0
+offset_left = 721.0
+offset_top = 618.0
+offset_right = 1326.0
+offset_bottom = 791.0
 theme = ExtResource("3_4gog6")
 theme_override_font_sizes/font_size = 120
 text = "Exit"

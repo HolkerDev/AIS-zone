@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdtieyo4juhej"]
+
+[ext_resource type="Texture2D" uid="uid://br00ogcaiqpij" path="res://assets/panel_beigeLight.png" id="1_jqbhe"]
+
+[node name="HeroSelection" type="Node2D"]
+
+[node name="PanelBeigeLight" type="Sprite2D" parent="."]
+position = Vector2(966, 408)
+scale = Vector2(20.18, 9.78)
+texture = ExtResource("1_jqbhe")
