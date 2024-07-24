@@ -1,50 +1,135 @@
-[gd_scene load_steps=3 format=3 uid="uid://c3a0vucsflsiv"]
+[gd_scene load_steps=5 format=3 uid="uid://c3a0vucsflsiv"]
 
-[ext_resource type="Script" path="res://lobby_scene/lobby.gd" id="1_wrg1q"]
-[ext_resource type="Theme" uid="uid://bhundlasnejpw" path="res://h1_text.tres" id="1_yl782"]
+[ext_resource type="Script" path="res://lobby_scene/lobby_manager.gd" id="1_1wf5d"]
+[ext_resource type="Script" path="res://lobby_scene/join_form.gd" id="2_1tdso"]
+[ext_resource type="Theme" uid="uid://bhundlasnejpw" path="res://h1_text.tres" id="2_niyel"]
+[ext_resource type="Script" path="res://lobby_scene/lobby_form.gd" id="4_pc6xv"]
 
 [node name="Lobby" type="Node2D"]
-script = ExtResource("1_wrg1q")
+script = ExtResource("1_1wf5d")
 
-[node name="LabelIP" type="RichTextLabel" parent="."]
-offset_left = 629.0
-offset_top = 384.0
-offset_right = 811.0
-offset_bottom = 468.0
-theme = ExtResource("1_yl782")
-text = "IP:"
+[node name="JoinForm" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_1tdso")
 
-[node name="join_btn" type="Button" parent="."]
-offset_left = 853.0
-offset_top = 506.0
-offset_right = 1123.0
-offset_bottom = 593.0
-theme = ExtResource("1_yl782")
-text = "JOIN"
-
-[node name="EditTextIP" type="LineEdit" parent="."]
+[node name="EditTextIP" type="LineEdit" parent="JoinForm"]
+layout_mode = 0
 offset_left = 802.0
 offset_top = 374.0
 offset_right = 1259.0
 offset_bottom = 451.0
-theme = ExtResource("1_yl782")
+theme = ExtResource("2_niyel")
+text = "26.0.196.35"
 placeholder_text = "Add IP:port here"
 
-[node name="LabelIP" type="RichTextLabel" parent="EditTextIP"]
+[node name="LabelIP" type="RichTextLabel" parent="JoinForm/EditTextIP"]
 layout_mode = 0
-offset_left = -175.0
-offset_top = -83.0
-offset_right = 5.0
-offset_bottom = 1.0
-theme = ExtResource("1_yl782")
-text = "Login:"
+offset_left = -173.0
+offset_top = 10.0
+offset_right = 9.0
+offset_bottom = 94.0
+theme = ExtResource("2_niyel")
+text = "IP:"
 
-[node name="EditTextLogin" type="LineEdit" parent="."]
+[node name="EditTextLogin" type="LineEdit" parent="JoinForm"]
+layout_mode = 0
 offset_left = 804.0
 offset_top = 287.0
 offset_right = 1261.0
 offset_bottom = 364.0
-theme = ExtResource("1_yl782")
+theme = ExtResource("2_niyel")
 placeholder_text = "Add login here"
 
-[connection signal="pressed" from="join_btn" to="." method="_on_join_pressed"]
+[node name="LabelLogin" type="RichTextLabel" parent="JoinForm/EditTextLogin"]
+layout_mode = 0
+offset_left = -177.0
+offset_top = 4.0
+offset_right = 3.0
+offset_bottom = 88.0
+theme = ExtResource("2_niyel")
+text = "Login:"
+
+[node name="join_btn" type="Button" parent="JoinForm"]
+layout_mode = 0
+offset_left = 808.0
+offset_top = 509.0
+offset_right = 1078.0
+offset_bottom = 596.0
+theme = ExtResource("2_niyel")
+text = "JOIN"
+
+[node name="TextStatus" type="RichTextLabel" parent="JoinForm"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 23.387
+anchor_top = 18.325
+anchor_right = 23.387
+anchor_bottom = 18.325
+offset_left = -901.48
+offset_top = -106.0
+offset_right = 913.52
+offset_bottom = 60.0
+theme = ExtResource("2_niyel")
+
+[node name="LobbyForm" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -5.0
+offset_top = 7.0
+offset_right = 1914.0
+offset_bottom = 818.0
+script = ExtResource("4_pc6xv")
+
+[node name="CounterPlayers" type="RichTextLabel" parent="LobbyForm"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.743
+anchor_top = 0.486
+anchor_right = 0.743
+anchor_bottom = 0.486
+offset_left = -423.817
+offset_top = -78.146
+offset_right = 424.183
+offset_bottom = 78.854
+theme = ExtResource("2_niyel")
+bbcode_enabled = true
+text = "1"
+
+[node name="LabelPlayers" type="RichTextLabel" parent="LobbyForm"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.442
+anchor_top = 0.439
+anchor_right = 0.442
+anchor_bottom = 0.439
+offset_left = -199.198
+offset_top = -39.029
+offset_right = 199.802
+offset_bottom = 38.971
+theme = ExtResource("2_niyel")
+text = "Total players:"
+
+[node name="ControlsHost" type="Control" parent="LobbyForm"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ButtonStartLevel" type="Button" parent="LobbyForm/ControlsHost"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.179
+anchor_top = 4.276
+anchor_right = -0.179
+anchor_bottom = 4.276
+offset_left = 820.16
+offset_top = 331.96
+offset_right = 1091.16
+offset_bottom = 416.96
+theme = ExtResource("2_niyel")
+text = "Start!"
+
+[connection signal="pressed" from="JoinForm/join_btn" to="JoinForm" method="_on_join_pressed"]
+[connection signal="pressed" from="LobbyForm/ControlsHost/ButtonStartLevel" to="LobbyForm" method="_on_button_pressed"]
