@@ -1,18 +1,17 @@
 [gd_scene load_steps=4 format=3 uid="uid://ccucbmqtyly8g"]
 
-[ext_resource type="Script" path="res://hero_selection_scene/trait_ui.gd" id="1_tqrr5"]
+[ext_resource type="Script" path="res://party_preparation_scene/hero_ui.gd" id="1_c16pe"]
 [ext_resource type="Texture2D" uid="uid://ddiwhj30tkayc" path="res://assets/playerIcons/default.png" id="2_rhen7"]
-[ext_resource type="Theme" uid="uid://bfqd5rdraqpr6" path="res://assets/h2_text_black.tres" id="3_gj5g7"]
+[ext_resource type="Theme" uid="uid://bfqd5rdraqpr6" path="res://assets/themes/h2_text_black.tres" id="3_j2dmt"]
 
 [node name="HeroUI" type="Control"]
 layout_mode = 3
 anchor_right = 0.22
 anchor_bottom = 1.0
-offset_right = 0.599976
+script = ExtResource("1_c16pe")
 
-[node name="TraitsUI" type="ScrollContainer" parent="."]
+[node name="TraitsUI" type="Control" parent="."]
 layout_mode = 1
-anchors_preset = -1
 anchor_left = 0.5
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -20,11 +19,7 @@ offset_left = -3.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TraitUI" type="Control" parent="TraitsUI"]
-layout_mode = 2
-script = ExtResource("1_tqrr5")
-
-[node name="HeroAvatarUI" type="Control" parent="."]
+[node name="HeroMainUI" type="Control" parent="."]
 layout_mode = 1
 anchor_left = 0.01
 anchor_top = 0.01
@@ -37,7 +32,7 @@ offset_bottom = -0.0659943
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="HeroAvatarUI"]
+[node name="TextureRect" type="TextureRect" parent="HeroMainUI"]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -51,16 +46,30 @@ texture = ExtResource("2_rhen7")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="Label" type="Label" parent="HeroAvatarUI"]
+[node name="HeroNameLabel" type="Label" parent="HeroMainUI"]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.6
 anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_bottom = 0.8
 offset_left = 3.0
 offset_top = -0.360413
 offset_right = 1.0
-offset_bottom = 0.065979
-theme = ExtResource("3_gj5g7")
+offset_bottom = -17.3959
+theme = ExtResource("3_j2dmt")
 text = "Name example"
 autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="EditHeroButton" type="Button" parent="HeroMainUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.85
+anchor_right = 1.0
+anchor_bottom = 0.95
+offset_left = -3.56
+offset_top = -0.510834
+offset_right = 4.43999
+offset_bottom = 7.48917
+theme = ExtResource("3_j2dmt")
+text = "Edit Hero"

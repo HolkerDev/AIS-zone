@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://du8at4g68bk2w"]
+[gd_scene load_steps=4 format=3 uid="uid://du8at4g68bk2w"]
 
 [ext_resource type="Texture2D" uid="uid://br00ogcaiqpij" path="res://assets/panel_beigeLight.png" id="1_htyx8"]
 [ext_resource type="Script" path="res://party_preparation_scene/party_preparation.gd" id="1_v8oyl"]
+[ext_resource type="PackedScene" uid="uid://c77rmfcrocgk1" path="res://party_preparation_scene/add_hero_button.tscn" id="2_pgfeu"]
 
 [node name="PartyPreparation" type="Node2D"]
 script = ExtResource("1_v8oyl")
@@ -27,3 +28,11 @@ layout_mode = 1
 anchor_right = 1.0
 anchor_bottom = 0.369
 offset_bottom = 0.15799
+
+[node name="AddHeroUI" parent="UI/HeroesUI" instance=ExtResource("2_pgfeu")]
+layout_mode = 1
+anchor_left = 0.145094
+anchor_top = 0.350565
+anchor_right = 0.245094
+anchor_bottom = 0.650565
+metadata/_edit_use_anchors_ = true

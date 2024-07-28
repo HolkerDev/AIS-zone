@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://br00ogcaiqpij" path="res://assets/panel_beigeLight.png" id="1_jqbhe"]
 [ext_resource type="Script" path="res://hero_selection_scene/hero_selection.gd" id="1_mf3tk"]
 [ext_resource type="Texture2D" uid="uid://ddiwhj30tkayc" path="res://assets/playerIcons/default.png" id="2_j65xt"]
-[ext_resource type="Theme" uid="uid://bb7eks7jxummj" path="res://assets/themes/h1_text_black.tres" id="3_p4hah"]
+[ext_resource type="Theme" uid="uid://bb7eks7jxummj" path="res://assets/h1_text_black.tres" id="3_p4hah"]
 [ext_resource type="Script" path="res://hero_selection_scene/TotalCostLabel.gd" id="5_mgdyt"]
 
 [node name="HeroSelection" type="Node2D"]

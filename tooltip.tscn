@@ -1,16 +1,16 @@
 [gd_scene load_steps=4 format=3 uid="uid://daiyuo2ajw3dj"]
 
 [ext_resource type="Script" path="res://tooltip.gd" id="1_28thn"]
-[ext_resource type="Theme" uid="uid://7jn34aqqjnnm" path="res://assets/tooltip.tres" id="1_esx6l"]
-[ext_resource type="StyleBox" uid="uid://qwt00fv7f8r7" path="res://assets/tooltip_stylebox.tres" id="2_guuvl"]
+[ext_resource type="Theme" uid="uid://7jn34aqqjnnm" path="res://assets/themes/tooltip.tres" id="1_psxln"]
+[ext_resource type="StyleBox" uid="uid://qwt00fv7f8r7" path="res://assets/themes/tooltip_stylebox.tres" id="2_4u0vk"]
 
 [node name="Label" type="Label"]
 anchors_preset = -1
 anchor_right = 0.208
 offset_right = 0.639984
 offset_bottom = 400.0
-theme = ExtResource("1_esx6l")
-theme_override_styles/normal = ExtResource("2_guuvl")
+theme = ExtResource("1_psxln")
+theme_override_styles/normal = ExtResource("2_4u0vk")
 text = "ABC"
 autowrap_mode = 3
 script = ExtResource("1_28thn")

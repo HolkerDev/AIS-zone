@@ -1,29 +1,33 @@
-[gd_scene load_steps=3 format=3 uid="uid://bjngjm88k25vd"]
+[gd_scene load_steps=4 format=3 uid="uid://bjngjm88k25vd"]
 
-[ext_resource type="Script" path="res://hero_selection_scene/trait_ui.gd" id="1_4dbhp"]
-[ext_resource type="Theme" uid="uid://bfqd5rdraqpr6" path="res://assets/h2_text_black.tres" id="2_alr32"]
+[ext_resource type="Script" path="res://hero_selection_scene/trait_edit_ui.gd" id="1_2qmvj"]
+[ext_resource type="Theme" uid="uid://bfqd5rdraqpr6" path="res://assets/themes/h2_text_black.tres" id="2_m2nnh"]
+[ext_resource type="Script" path="res://hero_selection_scene/trait_label.gd" id="3_akhv2"]
 
-[node name="TraitUI" type="Control"]
+[node name="TraitEditUI" type="Control"]
 layout_mode = 3
 anchor_left = 0.01
 anchor_right = 1.0
+anchor_bottom = 1.0
 offset_left = -0.200001
 offset_top = -0.391998
 offset_right = 0.291748
 offset_bottom = -0.18
-script = ExtResource("1_4dbhp")
+script = ExtResource("1_2qmvj")
 metadata/_edit_use_anchors_ = true
 
-[node name="TraitLabel" type="Label" parent="."]
+[node name="TraitLabel" type="RichTextLabel" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.151
 anchor_right = 0.8
+anchor_bottom = 1.0
 offset_top = 0.00800323
 offset_right = -0.207031
-offset_bottom = -28023.4
-theme = ExtResource("2_alr32")
+theme = ExtResource("2_m2nnh")
+bbcode_enabled = true
 text = "Trait example"
+script = ExtResource("3_akhv2")
 metadata/_edit_use_anchors_ = true
 
 [node name="TraitCheck" type="CheckButton" parent="."]
@@ -34,7 +38,7 @@ anchor_right = 0.15
 offset_top = 0.00800323
 offset_right = -19.7054
 offset_bottom = 40.008
-theme = ExtResource("2_alr32")
+theme = ExtResource("2_m2nnh")
 metadata/_edit_use_anchors_ = true
 
 [node name="TraitCostLabel" type="Label" parent="."]
@@ -46,8 +50,9 @@ offset_left = 0.0249939
 offset_right = -0.0595093
 offset_bottom = -28023.8
 grow_horizontal = 0
-theme = ExtResource("2_alr32")
+theme = ExtResource("2_m2nnh")
 text = "+1"
 metadata/_edit_use_anchors_ = true
 
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="toggled" from="TraitCheck" to="." method="on_trait_toggled"]

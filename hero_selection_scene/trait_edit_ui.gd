@@ -1,15 +1,10 @@
 extends Control
 
-class_name TraitUI
+class_name TraitEditUI
 @onready var trait_name: String
 @onready var cost: int
 @onready var description: String
 signal trait_toggled
-
-func _make_custom_tooltip(for_text):
-	var label = preload("res://tooltip.tscn").instantiate()
-	label.text = for_text
-	return label
 
 func init(i: int, in_name: String, in_cost: int, in_description: String):
 	
@@ -18,8 +13,7 @@ func init(i: int, in_name: String, in_cost: int, in_description: String):
 	self.description = in_description
 	
 	self.position = Vector2(0, i*25)
-	$TraitLabel.text = self.trait_name
-	self.tooltip_text = self.description
+	$TraitLabel.text = "[hint="+self.description+"]"+self.trait_name+"[/hint]"
 	
 	var cost_str = str(cost)
 	var cost_color = 'black'
@@ -33,3 +27,7 @@ func init(i: int, in_name: String, in_cost: int, in_description: String):
 
 func on_trait_toggled(state: bool):
 	trait_toggled.emit(state, self.cost)
+
+
+func _on_mouse_entered():
+	print("here")

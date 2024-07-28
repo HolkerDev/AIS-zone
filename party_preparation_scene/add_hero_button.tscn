@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://c77rmfcrocgk1"]
+
+[ext_resource type="Script" path="res://party_preparation_scene/add_hero_button.gd" id="1_8mjfk"]
+[ext_resource type="Theme" uid="uid://bhundlasnejpw" path="res://assets/themes/h1_text.tres" id="2_gxesg"]
+
+[node name="AddHeroUI" type="Control"]
+layout_mode = 3
+anchor_top = 0.35
+anchor_right = 0.1
+anchor_bottom = 0.65
+grow_vertical = 2
+script = ExtResource("1_8mjfk")
+
+[node name="AddHeroButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -64.0
+offset_right = 136.0
+offset_bottom = 64.0
+grow_vertical = 2
+theme = ExtResource("2_gxesg")
+text = "Add
+Hero"
