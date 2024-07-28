@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://lobby_scene/lobby_manager.gd" id="1_1wf5d"]
 [ext_resource type="Script" path="res://lobby_scene/join_form.gd" id="2_1tdso"]
-[ext_resource type="Theme" uid="uid://bhundlasnejpw" path="res://h1_text.tres" id="2_niyel"]
+[ext_resource type="Theme" uid="uid://bhundlasnejpw" path="res://assets/h1_text.tres" id="2_niyel"]
 [ext_resource type="Script" path="res://lobby_scene/lobby_form.gd" id="4_pc6xv"]
 
 [node name="Lobby" type="Node2D"]

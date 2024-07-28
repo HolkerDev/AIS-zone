@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjngjm88k25vd"]
+
+[ext_resource type="Script" path="res://hero_selection_scene/trait_ui.gd" id="1_4dbhp"]
+[ext_resource type="Theme" uid="uid://bfqd5rdraqpr6" path="res://assets/h2_text_black.tres" id="2_alr32"]
+
+[node name="TraitUI" type="Control"]
+layout_mode = 3
+anchor_left = 0.01
+anchor_right = 0.99
+offset_left = 0.133644
+offset_top = -0.391998
+offset_right = 0.291748
+offset_bottom = 39.608
+script = ExtResource("1_4dbhp")
+metadata/_edit_use_anchors_ = true
+
+[node name="TraitLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.107654
+anchor_right = 0.107654
+offset_top = 0.00800323
+offset_right = 330.393
+offset_bottom = -28023.4
+theme = ExtResource("2_alr32")
+text = "Trait Name"
+metadata/_edit_use_anchors_ = true
+
+[node name="TraitCheck" type="CheckButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_top = 0.00800323
+offset_right = 44.0
+offset_bottom = 40.008
+metadata/_edit_use_anchors_ = true
+
+[node name="TraitCostLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.99
+anchor_right = 0.99
+offset_left = -30.0595
+offset_right = -0.0595093
+offset_bottom = -28023.8
+grow_horizontal = 0
+theme = ExtResource("2_alr32")
+text = "+1"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="toggled" from="TraitCheck" to="." method="on_trait_toggled"]
