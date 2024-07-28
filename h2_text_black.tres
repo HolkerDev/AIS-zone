@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bfqd5rdraqpr6"]
+
+[ext_resource type="FontFile" uid="uid://bfqdvin7b5wdl" path="res://fonts/PixelifySans-Regular.ttf" id="1_m5hbe"]
+
+[resource]
+default_font = ExtResource("1_m5hbe")
+default_font_size = 30
+Label/colors/font_color = Color(0, 0, 0, 1)

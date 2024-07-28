@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://cdtieyo4juhej"]
+[gd_scene load_steps=5 format=3 uid="uid://cdtieyo4juhej"]
 
 [ext_resource type="Texture2D" uid="uid://br00ogcaiqpij" path="res://assets/panel_beigeLight.png" id="1_jqbhe"]
+[ext_resource type="Texture2D" uid="uid://ddiwhj30tkayc" path="res://assets/playerIcons/default.png" id="2_j65xt"]
+[ext_resource type="Theme" uid="uid://bb7eks7jxummj" path="res://h1_text_black.tres" id="3_p4hah"]
+[ext_resource type="Theme" uid="uid://bfqd5rdraqpr6" path="res://h2_text_black.tres" id="4_qple0"]
 
 [node name="HeroSelection" type="Node2D"]
 
@@ -8,3 +11,177 @@
 position = Vector2(966, 408)
 scale = Vector2(20.18, 9.78)
 texture = ExtResource("1_jqbhe")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1918.0
+offset_bottom = 821.0
+
+[node name="IconUI" type="Control" parent="UI"]
+layout_mode = 1
+anchor_left = 0.01
+anchor_top = 0.0101523
+anchor_right = 0.2
+anchor_bottom = 0.0101523
+offset_right = 0.561981
+offset_bottom = 354.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Icon" type="Sprite2D" parent="UI/IconUI"]
+texture = ExtResource("2_j65xt")
+centered = false
+
+[node name="TraitsUI" type="Control" parent="UI"]
+layout_mode = 1
+anchor_left = 0.61
+anchor_top = 0.009
+anchor_right = 0.99
+anchor_bottom = 0.99
+offset_left = -0.800293
+offset_top = -0.156003
+offset_right = 0.865845
+offset_bottom = -0.236023
+
+[node name="TraitsLabel" type="Label" parent="UI/TraitsUI"]
+layout_mode = 1
+anchors_preset = -1
+offset_right = 53.64
+offset_bottom = 22.283
+theme = ExtResource("3_p4hah")
+text = "Traits"
+
+[node name="Trait" type="Control" parent="UI/TraitsUI"]
+layout_mode = 1
+anchor_left = 0.0587751
+anchor_top = 0.120107
+anchor_right = 0.963
+anchor_bottom = 0.120107
+offset_left = -0.15
+offset_top = -0.117004
+offset_right = -0.760986
+offset_bottom = 39.883
+metadata/_edit_use_anchors_ = true
+
+[node name="TraitLabel" type="Label" parent="UI/TraitsUI/Trait"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.107654
+anchor_right = 0.107654
+offset_top = 0.00800323
+offset_right = 330.393
+offset_bottom = -28023.4
+theme = ExtResource("4_qple0")
+text = "Trait Name"
+metadata/_edit_use_anchors_ = true
+
+[node name="TraitCheck" type="CheckButton" parent="UI/TraitsUI/Trait"]
+layout_mode = 1
+anchors_preset = -1
+offset_top = 0.00800323
+offset_right = 44.0
+offset_bottom = 40.008
+metadata/_edit_use_anchors_ = true
+
+[node name="TraitCostLabel" type="Label" parent="UI/TraitsUI/Trait"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.876639
+anchor_right = 0.876639
+offset_left = -30.0595
+offset_right = -0.0595093
+offset_bottom = -28023.8
+grow_horizontal = 0
+theme = ExtResource("4_qple0")
+text = "+1"
+metadata/_edit_use_anchors_ = true
+
+[node name="TotalUI" type="Control" parent="UI/TraitsUI"]
+layout_mode = 1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -59.7351
+offset_right = -0.21405
+offset_bottom = 0.264893
+metadata/_edit_use_anchors_ = true
+
+[node name="TotalLabel" type="Label" parent="UI/TraitsUI/TotalUI"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 0.183998
+offset_top = -0.0350018
+offset_right = 170.252
+offset_bottom = -0.038002
+theme = ExtResource("3_p4hah")
+text = "Total:"
+
+[node name="TotalCostLabel" type="Label" parent="UI/TraitsUI/TotalUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.64
+anchor_right = 0.64
+offset_left = -73.64
+offset_right = 0.359985
+offset_bottom = 60.0
+theme = ExtResource("3_p4hah")
+text = "1"
+
+[node name="TotalCostMaxLabel" type="Label" parent="UI/TraitsUI/TotalUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.942
+anchor_right = 0.942
+offset_left = -47.496
+offset_top = -0.000999451
+offset_right = 0.0739746
+offset_bottom = -0.0039978
+theme = ExtResource("3_p4hah")
+text = "10"
+
+[node name="TotalOfLabel" type="Label" parent="UI/TraitsUI/TotalUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.79
+anchor_right = 0.792
+offset_left = -64.549
+offset_top = -0.012001
+offset_right = 0.0239563
+offset_bottom = -0.015007
+theme = ExtResource("3_p4hah")
+text = "of
+"
+
+[node name="MainInfoUI" type="Control" parent="UI"]
+layout_mode = 1
+anchor_left = 0.21
+anchor_top = 0.01
+anchor_right = 0.6
+anchor_bottom = 0.45
+offset_left = -0.792023
+offset_top = -0.244
+offset_right = -0.0300293
+offset_bottom = -0.264008
+
+[node name="NameInput" type="LineEdit" parent="UI/MainInfoUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_right = 0.9
+offset_left = -0.08255
+offset_top = -1.947
+offset_right = -0.331665
+offset_bottom = 66.053
+theme = ExtResource("3_p4hah")
+placeholder_text = "Input name here..."
+
+[node name="NameLabel" type="Label" parent="UI/MainInfoUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.2
+offset_left = -0.00434399
+offset_top = 0.0529995
+offset_right = -0.0709534
+offset_bottom = 60.053
+theme = ExtResource("3_p4hah")
+text = "Name:"
