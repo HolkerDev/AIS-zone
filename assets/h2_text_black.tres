@@ -1,8 +1,14 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bfqd5rdraqpr6"]
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://bfqd5rdraqpr6"]
 
-[ext_resource type="FontFile" uid="uid://bfqdvin7b5wdl" path="res://fonts/PixelifySans-Regular.ttf" id="1_m5hbe"]
+[ext_resource type="FontFile" uid="uid://bfqdvin7b5wdl" path="res://fonts/PixelifySans-Regular.ttf" id="1_8y477"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gqt0h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ojx38"]
 
 [resource]
-default_font = ExtResource("1_m5hbe")
+default_font = ExtResource("1_8y477")
 default_font_size = 30
+CheckButton/styles/focus = SubResource("StyleBoxEmpty_gqt0h")
 Label/colors/font_color = Color(0, 0, 0, 1)
+Label/styles/normal = SubResource("StyleBoxEmpty_ojx38")

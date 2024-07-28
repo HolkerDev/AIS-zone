@@ -16,7 +16,6 @@ func on_toggle(new_state: bool, cost: int):
 	$UI/TraitsUI/TotalUI/TotalCostLabel.change_cost(new_state, cost)
 
 func get_traits():
-	const Trait = preload("res://Trait.gd")
 	const traits_raw = [
 		{
 		  "trait_name": "Night Vision",

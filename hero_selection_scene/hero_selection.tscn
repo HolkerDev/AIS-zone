@@ -48,42 +48,44 @@ offset_bottom = 0.00195313
 [node name="TraitsLabel" type="Label" parent="UI/TraitsUI"]
 layout_mode = 1
 anchors_preset = -1
-offset_right = 53.64
-offset_bottom = 22.283
+anchor_bottom = 0.1
+offset_right = 156.0
+offset_bottom = -0.337585
 theme = ExtResource("3_p4hah")
 text = "Traits"
 
 [node name="TotalUI" type="Control" parent="UI/TraitsUI"]
 layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
+anchor_top = 0.85
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -59.7351
-offset_right = -0.21405
-offset_bottom = 0.264893
+anchor_bottom = 1.00021
+offset_top = 0.252075
 grow_horizontal = 2
 grow_vertical = 0
-metadata/_edit_use_anchors_ = true
 
 [node name="TotalLabel" type="Label" parent="UI/TraitsUI/TotalUI"]
 layout_mode = 1
 anchors_preset = -1
-offset_left = 0.183998
-offset_top = -0.0350018
-offset_right = 170.252
-offset_bottom = -0.038002
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -56.64
+offset_right = 139.0
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("3_p4hah")
 text = "Total:"
 
 [node name="TotalCostLabel" type="Label" parent="UI/TraitsUI/TotalUI"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.64
-anchor_right = 0.64
-offset_left = -73.64
-offset_right = 0.359985
-offset_bottom = 60.0
+anchor_left = 0.517
+anchor_top = 1.0
+anchor_right = 0.644
+anchor_bottom = 1.0
+offset_left = -0.927002
+offset_top = -58.0
+offset_right = -0.764038
+offset_bottom = 1.99998
 theme = ExtResource("3_p4hah")
 text = "0"
 script = ExtResource("5_mgdyt")
@@ -91,38 +93,38 @@ script = ExtResource("5_mgdyt")
 [node name="TotalCostMaxLabel" type="Label" parent="UI/TraitsUI/TotalUI"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.942
-anchor_right = 0.942
-offset_left = -47.496
-offset_top = -0.000999451
-offset_right = 0.0739746
-offset_bottom = -0.0039978
+anchor_left = 0.877
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.0189819
+offset_top = -60.001
+offset_right = -1.38806
+offset_bottom = -60.004
 theme = ExtResource("3_p4hah")
 text = "10"
 
 [node name="TotalOfLabel" type="Label" parent="UI/TraitsUI/TotalUI"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.79
-anchor_right = 0.792
-offset_left = -64.549
-offset_top = -0.012001
-offset_right = 0.0239563
-offset_bottom = -0.015007
+anchor_left = 0.68
+anchor_top = 1.0
+anchor_right = 0.768
+anchor_bottom = 1.0
+offset_left = -0.0799561
+offset_top = -59.98
+offset_right = 0.165039
+offset_bottom = 0.0199928
 theme = ExtResource("3_p4hah")
 text = "of
 "
 
 [node name="TraitList" type="Control" parent="UI/TraitsUI"]
 layout_mode = 1
-anchor_left = 0.05
-anchor_top = 0.12
-anchor_right = 0.05
-anchor_bottom = 0.815
-offset_left = 0.474689
-offset_top = 0.361481
-offset_right = 628.475
-offset_bottom = -0.33667
+anchor_top = 0.11
+anchor_right = 1.0
+anchor_bottom = 0.85
+grow_horizontal = 2
 
 [node name="MainInfoUI" type="Control" parent="UI"]
 layout_mode = 1
@@ -169,19 +171,19 @@ offset_top = -118.167
 offset_right = -0.388062
 offset_bottom = -0.167175
 
-[node name="Confirm" type="Button" parent="UI/ButtonsUI"]
+[node name="Apply" type="Button" parent="UI/ButtonsUI"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.01
 anchor_top = 1.0
 anchor_right = 0.49
 anchor_bottom = 1.0
-offset_left = -1.67863
-offset_top = -67.9679
-offset_right = -184.292
-offset_bottom = 0.0320663
+offset_left = -1.83742
+offset_top = -67.9998
+offset_right = -0.0335846
+offset_bottom = 0.000183105
 theme = ExtResource("3_p4hah")
-text = "Confirm"
+text = "Apply"
 
 [node name="Cancel" type="Button" parent="UI/ButtonsUI"]
 layout_mode = 1

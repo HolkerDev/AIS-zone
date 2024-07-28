@@ -6,13 +6,20 @@ class_name TraitUI
 @onready var description: String
 signal trait_toggled
 
-func init(i: int, name: String, cost: int, description: String):
-	self.trait_name = name
-	self.cost = cost
-	self.description = description
+func _make_custom_tooltip(for_text):
+	var label = preload("res://tooltip.tscn").instantiate()
+	label.text = for_text
+	return label
+
+func init(i: int, in_name: String, in_cost: int, in_description: String):
+	
+	self.trait_name = in_name
+	self.cost = in_cost
+	self.description = in_description
 	
 	self.position = Vector2(0, i*25)
-	$TraitLabel.text = name
+	$TraitLabel.text = self.trait_name
+	self.tooltip_text = self.description
 	
 	var cost_str = str(cost)
 	var cost_color = 'black'

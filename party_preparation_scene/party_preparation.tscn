@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://du8at4g68bk2w"]
+
+[ext_resource type="Texture2D" uid="uid://br00ogcaiqpij" path="res://assets/panel_beigeLight.png" id="1_htyx8"]
+[ext_resource type="PackedScene" uid="uid://ccucbmqtyly8g" path="res://hero.tscn" id="2_s0ri6"]
+
+[node name="PartyPreparation" type="Node2D"]
+
+[node name="PanelBeigeLight" type="Sprite2D" parent="."]
+position = Vector2(966, 408)
+scale = Vector2(20.18, 9.78)
+texture = ExtResource("1_htyx8")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_right = 1916.0
+offset_bottom = 820.0
+
+[node name="HeroesUI" type="Control" parent="UI"]
+layout_mode = 1
+anchor_right = 1.0
+anchor_bottom = 0.369
+offset_bottom = 0.15799
+
+[node name="Hero" parent="UI/HeroesUI" instance=ExtResource("2_s0ri6")]
+layout_mode = 1

@@ -1,0 +1,17 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://7jn34aqqjnnm"]
+
+[ext_resource type="FontFile" uid="uid://bfqdvin7b5wdl" path="res://fonts/PixelifySans-Regular.ttf" id="1_gsjtn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aflfx"]
+bg_color = Color(0.517647, 0.505882, 0.396078, 0.956863)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[resource]
+default_font = ExtResource("1_gsjtn")
+default_font_size = 30
+Label/colors/font_color = Color(0, 0, 0, 1)
+TooltipPanel/styles/normal = SubResource("StyleBoxFlat_aflfx")
+TooltipPanel/styles/panel = SubResource("StyleBoxFlat_aflfx")
