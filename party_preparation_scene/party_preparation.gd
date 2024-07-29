@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var hero_ui = preload("res://party_preparation_scene/hero.tscn")
+@onready var hero_ui = preload("res://party_preparation_scene/hero_ui.tscn")
 @onready var add_hero_button_ui = preload("res://party_preparation_scene/add_hero_button.tscn")
 
 func _ready():
