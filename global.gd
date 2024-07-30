@@ -39,7 +39,7 @@ func get_traits():
 		},
 		{
 		  "trait_name": "Clumsy",
-		  "cost": -6,
+		  "cost": - 6,
 		  "description": "Your character frequently stumbles and drops items, causing problems in stealth and delicate situations."
 		},
 		{
@@ -49,7 +49,7 @@ func get_traits():
 		},
 		{
 		  "trait_name": "Weak Constitution",
-		  "cost": -8,
+		  "cost": - 8,
 		  "description": "Your character has lower health and stamina, making them more susceptible to injuries and fatigue."
 		},
 		{
@@ -59,7 +59,7 @@ func get_traits():
 		},
 		{
 		  "trait_name": "Greedy",
-		  "cost": -5,
+		  "cost": - 5,
 		  "description": "Your character is obsessed with wealth, often taking unnecessary risks to obtain more gold and treasures."
 		},
 		{
@@ -69,7 +69,7 @@ func get_traits():
 		},
 		{
 		  "trait_name": "Fear of Darkness",
-		  "cost": -7,
+		  "cost": - 7,
 		  "description": "Your character is terrified of the dark, causing panic and decreased effectiveness in low-light environments."
 		},
 		{
@@ -79,7 +79,7 @@ func get_traits():
 		},
 		{
 		  "trait_name": "Short-Sighted",
-		  "cost": -6,
+		  "cost": - 6,
 		  "description": "Your character has poor long-distance vision, making ranged combat and spotting distant enemies difficult."
 		},
 		{
@@ -89,7 +89,7 @@ func get_traits():
 		},
 		{
 		  "trait_name": "Paranoid",
-		  "cost": -4,
+		  "cost": - 4,
 		  "description": "Your character is constantly on edge, reducing trust in allies and causing stress in social situations."
 		},
 		{
@@ -99,7 +99,7 @@ func get_traits():
 		},
 		{
 		  "trait_name": "Slow",
-		  "cost": -5,
+		  "cost": - 5,
 		  "description": "Your character moves at a slower pace, making them less effective in fast-paced combat and escapes."
 		},
 		{
@@ -109,7 +109,7 @@ func get_traits():
 		},
 		{
 		  "trait_name": "Pessimistic",
-		  "cost": -3,
+		  "cost": - 3,
 		  "description": "Your character often expects the worst, leading to lower morale and reduced effectiveness in prolonged battles."
 		},
 		{
@@ -119,7 +119,7 @@ func get_traits():
 		},
 		{
 		  "trait_name": "Cowardly",
-		  "cost": -8,
+		  "cost": - 8,
 		  "description": "Your character is prone to fleeing from danger, making them unreliable in critical combat situations."
 		},
 		{
@@ -129,7 +129,7 @@ func get_traits():
 		},
 		{
 		  "trait_name": "Forgetful",
-		  "cost": -5,
+		  "cost": - 5,
 		  "description": "Your character often forgets important details, leading to mistakes and missed opportunities."
 		}
 	]
