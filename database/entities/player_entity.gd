@@ -8,4 +8,5 @@ func table() -> Dictionary:
         "login": {"data_type": "text", "not_null": true},
         "password": {"data_type": "text", "not_null": true},
         "hero_name": {"data_type": "text", "not_null": true},
+        "hero_id": {"data_type": "int", "not_null": false},
     }

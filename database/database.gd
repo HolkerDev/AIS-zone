@@ -12,3 +12,12 @@ func init_db_conn() -> void:
 
 func is_database_connected() -> bool:
     return database != null
+
+func create_tables() -> void:
+    if not is_database_connected():
+        print("Database connection does not exist.")
+        return
+    database.create_table("hero", HeroEntity.new().table())
+    database.create_table("trait", TraitEntity.new().table())
+    database.create_table("hero_traits", HeroTraitsEntity.new().table())
+    database.create_table("player", PlayerEntity.new().table())
