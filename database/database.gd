@@ -1,23 +1,30 @@
-extends Node
+class_name Database extends Node
 
-var database: SQLite = null
+@export var player_queries: PlayerQueries = null
 
-func init_db_conn() -> void:
-    if is_database_connected():
+var _db_client: SQLite = null
+
+
+func _init() -> void:
+    if _is_database_connected():
         print("Database connection already exists.")
         return
-    database = SQLite.new()
-    database.path = "res://database/database.db"
-    database.open_db()
+    _db_client = SQLite.new()
+    _db_client.path = "res://_db_client/_db_client.db"
+    _db_client.open_db()
+    _create_tables()
 
-func is_database_connected() -> bool:
-    return database != null
+func _is_database_connected() -> bool:
+    return _db_client != null
 
-func create_tables() -> void:
-    if not is_database_connected():
+func _create_tables() -> void:
+    if not _is_database_connected():
         print("Database connection does not exist.")
         return
-    database.create_table("hero", HeroEntity.new().table())
-    database.create_table("trait", TraitEntity.new().table())
-    database.create_table("hero_traits", HeroTraitsEntity.new().table())
-    database.create_table("player", PlayerEntity.new().table())
+    _db_client.create_table("hero", HeroEntity.new().table())
+    _db_client.create_table("trait", TraitEntity.new().table())
+    _db_client.create_table("hero_traits", HeroTraitsEntity.new().table())
+    _db_client.create_table("player", PlayerEntity.new().table())
+
+func _init_queries() -> void:
+    player_queries = PlayerQueries.new(_db_client)
