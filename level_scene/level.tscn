@@ -1,10 +1,80 @@
-[gd_scene load_steps=2 format=3 uid="uid://bttuuea52kh6n"]
+[gd_scene load_steps=5 format=3 uid="uid://bttuuea52kh6n"]
 
-[ext_resource type="Texture2D" uid="uid://d3eirg8cc3qej" path="res://level_scene/image.webp" id="1_r6swt"]
+[ext_resource type="Theme" uid="uid://bb7eks7jxummj" path="res://assets/themes/h1_text_black.tres" id="1_phmdy"]
+[ext_resource type="Texture2D" uid="uid://br00ogcaiqpij" path="res://assets/panel_beigeLight.png" id="2_cmki3"]
+[ext_resource type="Script" path="res://level_scene/level.gd" id="2_snfw5"]
+[ext_resource type="Theme" uid="uid://bfqd5rdraqpr6" path="res://assets/themes/h2_text_black.tres" id="4_nif3s"]
 
 [node name="level" type="Node2D"]
+script = ExtResource("2_snfw5")
 
-[node name="Image" type="Sprite2D" parent="."]
-position = Vector2(911, 411)
-scale = Vector2(0.797363, 0.797363)
-texture = ExtResource("1_r6swt")
+[node name="PanelBeigeLight" type="Sprite2D" parent="."]
+position = Vector2(966, 408)
+scale = Vector2(20.18, 9.78)
+texture = ExtResource("2_cmki3")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 820.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StageUI" type="Control" parent="UI"]
+layout_mode = 1
+anchor_right = 0.7
+anchor_bottom = 1.0
+grow_vertical = 2
+
+[node name="ButtonSubmit" type="Button" parent="UI/StageUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -88.5
+offset_top = -34.0
+offset_right = 88.5
+offset_bottom = 34.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_phmdy")
+text = "Submit"
+
+[node name="TextInputAction" type="TextEdit" parent="UI/StageUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.45
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_nif3s")
+text = "Wait"
+placeholder_text = "Insert actions"
+
+[node name="LabelResult" type="RichTextLabel" parent="UI/StageUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.55
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_nif3s")
+
+[node name="StageList" type="Control" parent="UI"]
+layout_mode = 1
+anchor_left = 0.7
+anchor_top = 0.2
+anchor_right = 1.0
+anchor_bottom = 0.8
+grow_vertical = 2
+
+[connection signal="pressed" from="UI/StageUI/ButtonSubmit" to="." method="_on_submit"]

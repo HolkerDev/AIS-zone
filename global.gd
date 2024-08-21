@@ -1,11 +1,15 @@
 extends Node
 
 @onready var Trait = preload("res://trait.gd")
+@onready var Stage = preload("res://stage.gd")
 
 const SERVER_PORT = 8082
 var ROLE = ''
 var PLAYERS_COUNT = 0
 
+var STAGES = [{"is_active": true,
+		"action": "",
+		"result": ""},]
 
 func get_heroes():
 	const heroes_raw = [
@@ -28,7 +32,6 @@ func get_heroes():
 					   heroes_raw[i]['traits'])
 		heroes.append(hero_item)
 	return heroes
-
 
 func get_traits():
 	const traits_raw = [
@@ -140,3 +143,15 @@ func get_traits():
 								   trait_raw['description'])
 		traits.append(trait_item)
 	return traits
+
+func report_error(text: String):
+	print(text)
+
+func get_stages(adventure: int):
+	return STAGES
+
+func save_stage(adventure: int, action: String, result: String) -> int:
+	STAGES.insert(STAGES.size()-1, {"is_active": false,
+		"action": action,
+		"result": result})
+	return STAGES.size()-2
